@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "chickenkavalacluster-fc62"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "chickenkavalacluster-fc62"
+  template:
+    metadata:
+      labels:
+        app: "chickenkavalacluster-fc62"
+    spec:
+      containers:
+        - name: "chickenkavalacluster-fc62"
+          image: "jackdaniels.azurecr.io/chickenkavalacluster"
+          ports:
+          - containerPort: 80
